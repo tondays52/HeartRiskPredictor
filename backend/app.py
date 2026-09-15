@@ -595,7 +595,8 @@ def register(data: dict):
         raise HTTPException(status_code=400, detail="Username and password required")
 
     salt = secrets.token_hex(16)
-    password_hash = salt + ":" + hashlib.sha256((salt + password).encode()).hexdigest()
+    dk = hashlib.pbkdf2_hmac('sha256', password.encode(), bytes.fromhex(salt), 310000)
+    password_hash = salt + ":" + dk.hex()
     db_path = os.path.join(project_root, "data", "cardiorisk.db")
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
