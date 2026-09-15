@@ -120,8 +120,8 @@ flowchart TD
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/tondays52/CardioRisk.git
-cd CardioRisk
+git clone https://github.com/tondays52/HeartRiskPredictor.git
+cd HeartRiskPredictor
 ```
 
 ### 2. Create and Activate a Virtual Environment
