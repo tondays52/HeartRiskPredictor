@@ -52,6 +52,9 @@ models/tabular/best_model.joblib
 .idea/
 .DS_Store
 Thumbs.db
+.adsum/
+.unode/
+.kombai/
 
 # ============================================
 # Local Presentations and Reports

@@ -16,8 +16,8 @@ if not exist "venv\Scripts\python.exe" (
     exit /b 1
 )
 
-echo [1/2] Launching FastAPI Backend with HTTPS on port 8000 (0.0.0.0)...
-start "CardioRisk AI - Backend Server" cmd /k "title Backend API (Port 8000 HTTPS) && color 0B && .\venv\Scripts\python.exe -m uvicorn backend.app:app --reload --host 0.0.0.0 --port 8000 --ssl-keyfile certs/key.pem --ssl-certfile certs/cert.pem"
+echo [1/2] Launching FastAPI Backend on port 8000 (0.0.0.0)...
+start "CardioRisk AI - Backend Server" cmd /k "title Backend API (Port 8000 HTTP) && color 0B && .\venv\Scripts\python.exe -m uvicorn backend.app:app --reload --host 0.0.0.0 --port 8000"
 
 echo [WAIT] Giving backend 3 seconds to initialize...
 timeout /t 3 /nobreak >nul

@@ -16,8 +16,8 @@ if (-not (Test-Path $PythonExe)) {
     exit 1
 }
 
-Write-Host "[1/2] Starting FastAPI Backend with HTTPS on https://0.0.0.0:8000..." -ForegroundColor Yellow
-Start-Process -FilePath $PythonExe -ArgumentList "-m uvicorn backend.app:app --reload --host 0.0.0.0 --port 8000 --ssl-keyfile certs/key.pem --ssl-certfile certs/cert.pem" -WindowStyle Normal
+Write-Host "[1/2] Starting FastAPI Backend on http://0.0.0.0:8000..." -ForegroundColor Yellow
+Start-Process -FilePath $PythonExe -ArgumentList "-m uvicorn backend.app:app --reload --host 0.0.0.0 --port 8000" -WindowStyle Normal
 
 Start-Sleep -Seconds 3
 
